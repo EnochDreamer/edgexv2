@@ -12,7 +12,7 @@ function Home() {
             <div className='mb-20'>
                 <Body />
             </div>
-            <div>
+            <div className='w-full'>
                 <Footer />
             </div>
 

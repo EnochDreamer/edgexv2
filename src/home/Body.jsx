@@ -1,13 +1,75 @@
 import React from 'react'
 import { Button } from '@/components/ui/button'
 import homeHero from '../assets/homeHero.png'
-import { Play, Star,Users ,DollarSign } from 'lucide-react';
+import { Play, Star, StarHalf, Users, DollarSign, Stars, CircleArrowRight, MoveRight, ChevronRight } from 'lucide-react';
 import femaleModel from '@/assets/femaleModel.jpg'
 import maleModel from '@/assets/maleModel.jpg'
 import border1 from '@/assets/border1.png'
+import course1 from '@/assets/course1.jpg'
+import course2 from '@/assets/course2.jpg'
+import course3 from '@/assets/course3.jpg'
+import course4 from '@/assets/course4.png'
 
 
 function Body() {
+    const coursesData = [
+        {
+            id: 1,
+            image: course1,
+            title: "Introduction to Web Development",
+            rating: 4.5,
+            courseLength: "12",
+            numberOfRatings: "12k"
+        },
+        {
+            id: 2,
+            image: course2,
+            title: "Advanced JavaScript Mastery",
+            rating: 4.8,
+            courseLength: "18",
+            numberOfRatings: "21k"
+        },
+        {
+            id: 3,
+            image: course3,
+            title: "React & Modern Frontend",
+            rating: 4.9,
+            courseLength: "15",
+            numberOfRatings: "18k"
+        }
+    ];
+
+    const userCoursesData = [
+        {
+            id: 1,
+            image: course4,
+            title: "Introduction to Web Development",
+            price: 15000,
+            creator: "John Doe",
+            rating: 4.5,
+            numberOfRatings: 1250
+        },
+        {
+            id: 2,
+            image: course4,
+            title: "Advanced JavaScript Mastery",
+            price: 25000,
+            creator: "Jane Smith",
+            rating: 4.8,
+            numberOfRatings: 2100
+        },
+        {
+            id: 3,
+            image: course4,
+            title: "React & Modern Frontend",
+            price: 20000,
+            creator: "Mike Johnson",
+            rating: 4.9,
+            numberOfRatings: 1850
+        },
+
+    ];
+
     return (
         <div className='mx-4'>
             <div >
@@ -75,14 +137,14 @@ function Body() {
                 </div>
 
             </div>
-            <div className="my-10 rounded-2xl w-full mx-auto bg-[#34ACB4] h-32 flex flex-row items-center justify-center text-white gap-4">
+            <div className="my-10 rounded-2xl w-full mx-auto bg-[#34ACB4] h-32 flex flex-row items-center justify-center text-white gap-4 px-1">
                 <div className='text-center grid grid-rows-2'>
                     <p className='text-xl font-bold mb-1'>20K+</p>
-                    <p className='text-xs'>Total Registered<br />Students</p>
+                    <p className='text-xs'>Registered<br />Students</p>
                 </div>
                 <div className='text-center grid grid-rows-2'>
                     <p className='text-xl font-bold mb-1'>7K+</p>
-                    <p className='text-xs'>Total Available<br />Courses/Subjects</p>
+                    <p className='text-xs'>Available<br />Courses/Subjects</p>
                 </div>
                 <div className='text-center grid grid-rows-2'>
                     <p className='text-xl font-bold mb-1'>3K+</p>
@@ -94,7 +156,7 @@ function Body() {
                 </div>
             </div>
             <div>
-                <p className='text-[#FD8B3A] text-center'>OUR SERVICES</p>
+                <p className='text-[#FD8B3A] text-center font-bold'>OUR SERVICES</p>
                 <p className='text-2xl '>Online tutoring services <br />
                     at<span className='inline-block relative px-2 pb-2 text-[#1E7B82] font-extrabold' style={{
                         backgroundImage: `url(${border1})`,
@@ -113,14 +175,14 @@ function Body() {
                                     <rect width="7.2" height="7.2" fill="white" />
                                 </clipPath>
                             </defs>
-                        </svg> 
+                        </svg>
 
                     </div>
                     <div className='bg-[#FEA7C7] rounded-lg w-fit p-4'>
                         <Users size={18} strokeWidth={1.75} className='text-white' />
                     </div>
                     <div className='bg-[#A7CF4B] rounded-lg w-fit p-4'>
-                        <DollarSign size={18} strokeWidth={1.75}  className='text-white bg-white-200'/>
+                        <DollarSign size={18} strokeWidth={1.75} className='text-white bg-white-200' />
                     </div>
                     <p className='font-bold text-md'>24/7 Availability</p>
                     <p className='font-bold text-md'>One-on-One Teaching</p>
@@ -130,6 +192,102 @@ function Body() {
                     <p className='text-xs'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt .</p>
 
                 </div>
+
+            </div>
+            <div className='mt-6'>
+                <p className='text-center font-bold text-2xl'>What is <span className='text-[#FD8B3A] font-bold '>EdgeX</span></p>
+                <p className='text-center text-sm mt-6'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                <div className='mt-6 grid grid-cols-3 gap-2 md:gap-4'>
+                    {coursesData.map((course) => (
+                        <div key={course.id} className='ring-1 ring-[#A7A7A7] rounded-lg p-1 md:p-4 flex flex-col h-40 md:h-60'>
+                            <img src={course.image} alt={course.title} className='w-full h-24 md:h-36 object-cover rounded-lg mb-1 md:mb-2' />
+                            <p className='font-bold text-[10px] md:text-xs mb-1 md:mb-2 text-start'>{course.title}</p>
+                            <div className='flex flex-row items-center justify-start gap-1 md:gap-2 mt-auto'>
+                                <div className='flex w-fit flex-row items-center justify-center gap-0.5 md:gap-1 text-[10px] md:text-xs ring-1 ring-[#A7A7A7] px-0.5 rounded-xs'>
+                                    <Star className='fill-[#EB7F3A] text-[#EB7F3A] w-[8px] h-[8px] md:w-[10px] md:h-[10px]' />
+                                    <span className='text-[10px] md:text-xs'>{course.rating}</span>
+                                </div>
+                                <span className='text-[10px] md:text-xs ring-1 ring-[#A7A7A7] px-0.5 rounded-xs'>{course.courseLength} total hours</span>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
+
+            </div>
+            <div className='mt-6'>
+                <p className=' font-bold text-[#FD8B3A] text-center'>COURSES</p>
+                <p>Select among our <span className=' font-bold'>available subjects</span> <br />
+                    or courses relating to  <span className=' font-bold'>your preference</span></p>
+                <div className='mt-6 grid grid-cols-3 gap-2 sm:gap-3 md:gap-4'>
+                    {userCoursesData.map((course) => (
+                        <div key={course.id} className='ring-1 ring-[#A7A7A7] rounded-lg p-0.5 sm:p-1 md:p-2 grid grid-rows-[auto_auto_auto_auto_auto] h-40 sm:h-52 md:h-60'>
+                            <img src={course.image} alt={course.title} className='w-full h-24 sm:h-32 md:h-36 object-cover rounded-lg row-span-1' />
+                            <p className='font-bold text-[10px] sm:text-xs md:text-sm text-start line-clamp-2 row-span-1'>{course.title}</p>
+                            <p className='font-bold text-[9px] sm:text-[10px] md:text-xs text-start row-span-1'>{course.creator}</p>
+                            <div className='flex items-center gap-1 sm:gap-1.5 md:gap-2 row-span-1'>
+                                <span className='text-[10px] sm:text-xs md:text-sm text-[#EB7F3A] font-bold'>{course.rating}</span>
+                                {(() => {
+                                    const fullStars = Math.floor(course.rating);
+                                    const hasHalfStar = course.rating % 1 >= 0.5;
+                                    const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+
+                                    return (
+                                        <>
+                                            {Array.from({ length: fullStars }).map((_, i) => (
+                                                <Star key={`full-${i}`} className='fill-[#EB7F3A] text-[#EB7F3A] w-[8px] h-[8px] sm:w-[9px] sm:h-[9px] md:w-[10px] md:h-[10px]' />
+                                            ))}
+                                            {hasHalfStar && (
+                                                <StarHalf key="half" className='fill-[#EB7F3A] text-[#EB7F3A] w-[8px] h-[8px] sm:w-[9px] sm:h-[9px] md:w-[10px] md:h-[10px]' />
+                                            )}
+                                            {Array.from({ length: emptyStars }).map((_, i) => (
+                                                <Star key={`empty-${i}`} className='text-[#EB7F3A] w-[8px] h-[8px] sm:w-[9px] sm:h-[9px] md:w-[10px] md:h-[10px]' />
+                                            ))}
+                                        </>
+                                    );
+                                })()}
+                                <span className='text-[9px] sm:text-[10px] md:text-xs'>({course.numberOfRatings.toLocaleString()})</span>
+                            </div>
+                            <p className='text-[10px] sm:text-xs md:text-sm font-bold text-start row-span-1 self-end'>₦{course.price.toLocaleString()}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+            <div className='mt-10 p-4 flex flex-row gap-5'>
+                <div className='w-1/2 space-y-3'>
+                    <div className='flex justify-start items-center gap-2'>
+                        <div className='w-10 bg-amber-200'><hr className='border-[#EB7F3A]' /></div>
+                        <p className='text-[#EB7F3A] text-md font-[NeoGram Trial]'>TESTIMONIAL</p>
+                    </div>
+                    <div className='text-justify space-y-4 text-[.5rem]  '>
+                        <p className='text-[#34ACB4] text-md font-bold'>What They Say?</p>
+
+                        <p>edgeX has earned the trust of users across the globe, with more than 100,000 positive ratings.</p>
+                        <p>Some students and teachers have benefited greatly from using edgeX, finding it an invaluable support in their learning and teaching journey.</p>
+                        <p>Are you too? Please give your assessment</p>
+                    </div>
+                    <Button variant='outline' className='w-full text-start text-[#1E7B82] text-[.5rem] ring-1 ring-[#1E7B82] rounded-2xl h-6 flex justify-self-start relative justify-start'>
+                        Write your assessment <MoveRight className='size-6 float-end absolute right-0 ring-1 ring-[#1E7B82] rounded-full p-1' />
+                    </Button>
+                </div>
+                <div className='w-1/2 h-full'>
+                    <Button className='rounded-full my-15 text-[#1E7B82] bg-white'><ChevronRight /> </Button>
+                    <div className='border-l-4 border-l-black pl-4 rounded-[5px] text-[.5rem] h-1/2'>
+                        <p className='text-justify '>Thank you so much for your support. This is exactly what I’ve been searching for, and it truly makes a difference. It saves me valuable time and effort, and edgeX is precisely what our work has been missing.</p>
+                        <div className='flex justify-between mt-1.5'>
+                            <p className=''>Enoch Ekele</p>
+                            <div className='flex items-center gap-0.5'>
+                                <Star className='fill-[#EB7F3A] text-[#EB7F3A] w-2 h-2' />
+                                <Star className='fill-[#EB7F3A] text-[#EB7F3A] w-2 h-2' />
+                                <Star className='fill-[#EB7F3A] text-[#EB7F3A] w-2 h-2' />
+                                <Star className='fill-[#EB7F3A] text-[#EB7F3A] w-2 h-2' />
+                                <Star className='fill-[#EB7F3A] text-[#EB7F3A] w-2 h-2' />
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
             </div>
 
 
