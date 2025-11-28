@@ -11,7 +11,7 @@ function Header() {
     return (
         <div className='flex justify-between items-center p-4 sm:p-10 md:p-20 w-full h-30'>
             <div>
-                <img src={edgex} alt="logo" className='w-30 h-30'/>
+                <img src={edgex} alt="logo" className='w-35 h-30'/>
             </div>
             <div className="gap-6 hidden sm:flex sm:text-[.725rem] md:text-[.9rem] font-bold">
                 <NavLink to="/" className={({isActive}) => `transition ease-in  hover:border-b-2 hover:border-[#1E7B82] ${isActive ? 'border-b-2 border-[#1E7B82]' : ''}`}>
