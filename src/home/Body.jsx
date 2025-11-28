@@ -4,12 +4,13 @@ import homeHero from '../assets/homeHero.png'
 import { Play, Star, StarHalf, Users, DollarSign, Stars, CircleArrowRight, MoveRight, ChevronRight, Linkedin, Instagram, Facebook } from 'lucide-react';
 import femaleModel from '@/assets/femaleModel.jpg'
 import maleModel from '@/assets/maleModel.jpg'
-import border1 from '@/assets/border1.png'
 import course1 from '@/assets/course1.jpg'
 import course2 from '@/assets/course2.jpg'
 import course3 from '@/assets/course3.jpg'
 import course4 from '@/assets/course4.png'
 import edgex from '@/assets/edgex.png'
+import SimpleCourseGrid from '@/components/SimpleCourseGrid'
+import DetailedCourseGrid from '@/components/DetailedCourseGrid'
 
 
 function Body() {
@@ -72,10 +73,11 @@ function Body() {
     ];
 
     return (
-        <div className='mx-4'>
-            <div >
-                <div className="flex flex-col items-center">
-                    <div className='text-center text-2xl font-bold mb-3'>
+        <div className='mx-4 sm:mx-10 md:mx-20'>
+            
+            <div className='flex flex-col sm:grid sm:grid-cols-2 sm:gap-4'>
+                <div className="flex flex-col items-center sm:justify-end sm:row-start-1 sm:col-start-1">
+                    <div className='text-center text-2xl font-bold mb-3 bg-no-repeat bg-bottom pb-2 [background-size:120%_8px] sm:[background-image:url(/border1.png)]'>
                         <h3>Empowering</h3>
                         <h3>Education with</h3>
                         <h3>Technology</h3>
@@ -86,11 +88,12 @@ function Body() {
                             <path d="M26.3301 13.5291C26.5123 13.4633 26.7165 13.5093 26.8535 13.6462C26.9905 13.7832 27.0364 13.9874 26.9707 14.1697L22.6367 26.1697C22.6321 26.1825 22.6268 26.1954 22.6211 26.2078C22.552 26.3584 22.4412 26.4863 22.3018 26.5759C22.1621 26.6656 21.999 26.7136 21.833 26.7136C21.6672 26.7136 21.5048 26.6655 21.3652 26.5759C21.2304 26.4893 21.1232 26.3666 21.0537 26.2224L21.0527 26.2234L18.7939 21.7048L14.2764 19.447L14.2773 19.4451C14.1333 19.3756 14.0104 19.2693 13.9238 19.1345C13.8567 19.0298 13.8125 18.912 13.7949 18.7898L13.7861 18.6667L13.7949 18.5427C13.8126 18.4206 13.8567 18.3026 13.9238 18.198C14.0134 18.0586 14.1414 17.9477 14.292 17.8787L14.3301 17.863L26.3301 13.5291ZM19.7744 21.4314L21.8125 25.5066L25.2676 15.9382L19.7744 21.4314ZM14.9922 18.6863L19.0674 20.7244L24.5605 15.2312L14.9922 18.6863Z" fill="#1E7B82" />
                         </svg>
                         </Button>
+
                     </div>
                 </div>
-                <div className='relative bg-[#B2DFDB] rounded-2xl overflow-hidden'>
+                <div className='relative bg-[#B2DFDB] rounded-2xl overflow-hidden sm:row-start-1 sm:row-span-2 sm:col-start-2'>
                     <img src={homeHero} alt='home-hero' className='max-w-full w-full h-auto object-cover block' />
-                    <div className=' absolute top-0 left-0'>
+                    <div className=' absolute top-0 left-0 sm:hidden'>
                         <div className='flex flex-row'>
                             <div className='bg-white p-3 rounded-br-2xl'>
                                 <Button className='bg-[#1E7B82] '>
@@ -110,7 +113,7 @@ function Body() {
                         </Button>
                     </div>
                 </div>
-                <div className='w-4/5 max-w-[90%] h-40 ring-1 ring-[#A7A7A7]  mx-auto mt-10 grid grid-rows-5 rounded-lg pt-1'>
+                <div className='w-4/5 max-w-[90%] h-40 ring-1 ring-[#A7A7A7]  mx-auto mt-10 grid grid-rows-5 rounded-lg pt-1 sm:row-start-2 sm:col-start-1 sm:mt-0'>
                     <div className='flex row-span-3 justify-around items-center'>
                         <div className='bg-[#34ACB4] h-fit flex justify-center p-1 rounded-full'>
                             <div className='ring-1 ring-white w-18 h-18 flex items-center justify-center rounded-full'>
@@ -138,33 +141,28 @@ function Body() {
                 </div>
 
             </div>
-            <div className="my-10 rounded-2xl w-full mx-auto bg-[#34ACB4] h-32 flex flex-row items-center justify-center text-white gap-4 px-1">
+            <div className="my-10 rounded-2xl w-full mx-auto bg-[#34ACB4] h-32 flex flex-row items-center sm:justify-around justify-center text-white gap-4 px-1 sm:px-10">
                 <div className='text-center grid grid-rows-2'>
-                    <p className='text-xl font-bold mb-1'>20K+</p>
-                    <p className='text-xs'>Registered<br />Students</p>
+                    <p className='text-xl sm:text-2xl font-bold mb-1'>20K+</p>
+                    <p className='text-xs sm:text-md'>Registered<br />Students</p>
                 </div>
                 <div className='text-center grid grid-rows-2'>
-                    <p className='text-xl font-bold mb-1'>7K+</p>
-                    <p className='text-xs'>Available<br />Courses/Subjects</p>
+                    <p className='text-xl font-bold mb-1 sm:text-2xl'>7K+</p>
+                    <p className='text-xs sm:text-md'>Available<br />Courses/Subjects</p>
                 </div>
                 <div className='text-center grid grid-rows-2'>
-                    <p className='text-xl font-bold mb-1'>3K+</p>
-                    <p className='text-xs'>Certified Tutors</p>
+                    <p className='text-xl font-bold mb-1 sm:text-2xl'>3K+</p>
+                    <p className='text-xs sm:text-md'>Certified Tutors</p>
                 </div>
                 <div className='text-center grid grid-rows-2'>
-                    <p className='text-xl font-bold mb-1'>12K+</p>
-                    <p className='text-xs'>Accredited Quizzes</p>
+                    <p className='text-xl font-bold mb-1 sm:text-2xl'>12K+</p>
+                    <p className='text-xs sm:text-md'>Accredited Quizzes</p>
                 </div>
             </div>
             <div>
                 <p className='text-[#FD8B3A] text-center font-bold'>OUR SERVICES</p>
                 <p className='text-2xl '>Online tutoring services <br />
-                    at<span className='inline-block relative px-2 pb-2 text-[#1E7B82] font-extrabold' style={{
-                        backgroundImage: `url(${border1})`,
-                        backgroundSize: '120% 4px',
-                        backgroundPosition: 'bottom',
-                        backgroundRepeat: 'no-repeat'
-                    }}>EdgeX</span></p>
+                    at<span className='inline-block relative px-2 pb-2 text-[#1E7B82] font-extrabold bg-no-repeat bg-bottom [background-size:120%_8px] [background-image:url(/border1.png)]'>EdgeX</span></p>
                 <div className='mt-6 grid grid-cols-3 gap-4 text-start'>
                     <div className='bg-[#F0C933] rounded-lg w-fit p-4'>
                         <svg width="18" height="18" viewBox="0 0 8 8" fill="white" xmlns="http://www.w3.org/2000/svg">
@@ -198,61 +196,13 @@ function Body() {
             <div className='mt-6'>
                 <p className='text-center font-bold text-2xl'>What is <span className='text-[#FD8B3A] font-bold '>EdgeX</span></p>
                 <p className='text-center text-sm mt-6'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-                <div className='mt-6 grid grid-cols-3 gap-2 md:gap-4'>
-                    {coursesData.map((course) => (
-                        <div key={course.id} className='ring-1 ring-[#A7A7A7] rounded-lg p-1 md:p-4 flex flex-col h-40 md:h-60'>
-                            <img src={course.image} alt={course.title} className='w-full h-24 md:h-36 object-cover rounded-lg mb-1 md:mb-2' />
-                            <p className='font-bold text-[10px] md:text-xs mb-1 md:mb-2 text-start'>{course.title}</p>
-                            <div className='flex flex-row items-center justify-start gap-1 md:gap-2 mt-auto'>
-                                <div className='flex w-fit flex-row items-center justify-center gap-0.5 md:gap-1 text-[10px] md:text-xs ring-1 ring-[#A7A7A7] px-0.5 rounded-xs'>
-                                    <Star className='fill-[#EB7F3A] text-[#EB7F3A] w-[8px] h-[8px] md:w-[10px] md:h-[10px]' />
-                                    <span className='text-[10px] md:text-xs'>{course.rating}</span>
-                                </div>
-                                <span className='text-[10px] md:text-xs ring-1 ring-[#A7A7A7] px-0.5 rounded-xs'>{course.courseLength} total hours</span>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-
-
+                <SimpleCourseGrid courses={coursesData} />
             </div>
             <div className='mt-6'>
                 <p className=' font-bold text-[#FD8B3A] text-center'>COURSES</p>
-                <p>Select among our <span className=' font-bold'>available subjects</span> <br />
+                <p className='text-center'>Select among our <span className=' font-bold'>available subjects</span> <br />
                     or courses relating to  <span className=' font-bold'>your preference</span></p>
-                <div className='mt-6 grid grid-cols-3 gap-2 sm:gap-3 md:gap-4'>
-                    {userCoursesData.map((course) => (
-                        <div key={course.id} className='ring-1 ring-[#A7A7A7] rounded-lg p-0.5 sm:p-1 md:p-2 grid grid-rows-[auto_auto_auto_auto_auto] h-40 sm:h-52 md:h-60'>
-                            <img src={course.image} alt={course.title} className='w-full h-24 sm:h-32 md:h-36 object-cover rounded-lg row-span-1' />
-                            <p className='font-bold text-[10px] sm:text-xs md:text-sm text-start line-clamp-2 row-span-1'>{course.title}</p>
-                            <p className='font-bold text-[9px] sm:text-[10px] md:text-xs text-start row-span-1'>{course.creator}</p>
-                            <div className='flex items-center gap-1 sm:gap-1.5 md:gap-2 row-span-1'>
-                                <span className='text-[10px] sm:text-xs md:text-sm text-[#EB7F3A] font-bold'>{course.rating}</span>
-                                {(() => {
-                                    const fullStars = Math.floor(course.rating);
-                                    const hasHalfStar = course.rating % 1 >= 0.5;
-                                    const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
-
-                                    return (
-                                        <>
-                                            {Array.from({ length: fullStars }).map((_, i) => (
-                                                <Star key={`full-${i}`} className='fill-[#EB7F3A] text-[#EB7F3A] w-[8px] h-[8px] sm:w-[9px] sm:h-[9px] md:w-[10px] md:h-[10px]' />
-                                            ))}
-                                            {hasHalfStar && (
-                                                <StarHalf key="half" className='fill-[#EB7F3A] text-[#EB7F3A] w-[8px] h-[8px] sm:w-[9px] sm:h-[9px] md:w-[10px] md:h-[10px]' />
-                                            )}
-                                            {Array.from({ length: emptyStars }).map((_, i) => (
-                                                <Star key={`empty-${i}`} className='text-[#EB7F3A] w-[8px] h-[8px] sm:w-[9px] sm:h-[9px] md:w-[10px] md:h-[10px]' />
-                                            ))}
-                                        </>
-                                    );
-                                })()}
-                                <span className='text-[9px] sm:text-[10px] md:text-xs'>({course.numberOfRatings.toLocaleString()})</span>
-                            </div>
-                            <p className='text-[10px] sm:text-xs md:text-sm font-bold text-start row-span-1 self-end'>₦{course.price.toLocaleString()}</p>
-                        </div>
-                    ))}
-                </div>
+                <DetailedCourseGrid courses={userCoursesData} />
             </div>
             <div className='mt-10 p-4 flex flex-row gap-5'>
                 <div className='w-1/2 space-y-3'>
@@ -260,20 +210,20 @@ function Body() {
                         <div className='w-10 bg-amber-200'><hr className='border-[#EB7F3A]' /></div>
                         <p className='text-[#EB7F3A] text-md font-[NeoGram Trial]'>TESTIMONIAL</p>
                     </div>
-                    <div className='text-justify space-y-4 text-[.5rem]  '>
+                    <div className='text-justify space-y-4 text-[.5rem] sm:text-sm  '>
                         <p className='text-[#34ACB4] text-xl '>What They Say?</p>
 
                         <p>edgeX has earned the trust of users across the globe, with more than 100,000 positive ratings.</p>
                         <p>Some students and teachers have benefited greatly from using edgeX, finding it an invaluable support in their learning and teaching journey.</p>
                         <p>Are you too? Please give your assessment</p>
                     </div>
-                    <Button variant='outline' className='w-full text-start text-[#1E7B82] text-[.5rem] ring-1 ring-[#1E7B82] rounded-2xl h-6 flex justify-self-start relative justify-start'>
+                    <Button variant='outline' className='w-full text-start text-[#1E7B82] text-[.5rem] sm:text-sm ring-1 ring-[#1E7B82] rounded-2xl h-6 flex justify-self-start relative justify-start'>
                         Write your assessment <MoveRight className='size-6 float-end absolute right-0 ring-1 ring-[#1E7B82] rounded-full p-1' />
                     </Button>
                 </div>
                 <div className='w-1/2 h-full'>
                     <Button className='rounded-full my-15 text-[#1E7B82] bg-white'><ChevronRight /> </Button>
-                    <div className='border-l-4 border-l-black pl-4 rounded-[5px] text-[.5rem] h-1/2'>
+                    <div className='border-l-4 border-l-black pl-4 rounded-[5px] text-[.5rem] sm:text-sm h-1/2'>
                         <p className='text-justify '>Thank you so much for your support. This is exactly what I’ve been searching for, and it truly makes a difference. It saves me valuable time and effort, and edgeX is precisely what our work has been missing.</p>
                         <div className='flex justify-between mt-1.5'>
                             <p className=''>Enoch Ekele</p>
@@ -293,10 +243,10 @@ function Body() {
             <div className='bg-[#E0ECFF] w-[calc(100%+2rem)] h-25 -ml-4 flex flex-col items-center justify-center gap-1'>
 
                 <div className='w-fit'>
-                    <img src={edgex} alt="logo" className='w-20 h-15' />
+                    <img src={edgex} alt="logo" className='w-20 h-15 md:w-30 md:h-18' />
                 </div>
 
-                <div className='text-center text-[.5rem] font-bold flex gap-1.5'>
+                <div className='text-center text-[.5rem] sm:text-sm font-bold flex gap-1.5 sm:hidden'>
                     <span>Home</span>|<span>Courses</span>|<span>About Us</span>|<span>Subscription</span>|<span>log in</span>|<span>Sign up</span>
                 </div>
                 <div className='flex items-center justify-center gap-2'>
@@ -314,7 +264,7 @@ function Body() {
 
 
             </div>
-            <div className='flex justify-between text-[.5rem] mt-4'>
+            <div className='flex justify-between text-[.5rem] sm:text-sm mt-4'>
                 <p>(c) 2025 copyright | edgeX, All rights reserved</p>
                 <p>Privacy & Policy    |    Terms & Condition</p>
             </div>
